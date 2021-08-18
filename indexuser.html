@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2</title>
+    <title>Laboratory Management System</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -31,7 +31,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="indexuser.html">
                 
                 <div class="sidebar-brand-text mx-3">Laboratory Management System</div>
             </a>
@@ -41,25 +41,14 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="indexuser.html">
                     <i class="fas fa-fw fa-globe"></i>
                     <span>Dashboard</span></a>
             </li>
             
+         
             <li class="nav-item active">
-                <a class="nav-link" href="data_asset.html">
-                    <i class="fas fa-fw fa-database"></i>
-                    <span>Data Aset</span></a>
-            </li>
-            
-             <li class="nav-item active">
-                <a class="nav-link" href="rencana_praktikum.html">
-                    <i class="fas fa-fw fa-pencil-alt"></i>
-                    <span>Perencanaan Praktikum</span></a>
-            </li>
-            
-            <li class="nav-item active">
-                <a class="nav-link" href="rencana_praktikum.html">
+                <a class="nav-link" href="pelaksanaan_praktikum.html">
                     <i class="fas fa-fw fa-toolbox"></i>
                     <span>Pelaksanaan Praktikum</span></a>
             </li>
@@ -72,20 +61,14 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="">Form Perencanaan </a>
-                        <a class="collapse-item" href="">Form Pelaksanaan </a>
-                        <a class="collapse-item" href="">Laporan Data Aset </a>
+                        <a class="collapse-item" href="form perencanaan.html">Form Perencanaan </a>
+                        <a class="collapse-item" href="Form pelaksanaan.html">Form Pelaksanaan </a>
+                        <a class="collapse-item" href="laporan data aset.html">Laporan Data Aset </a>
                     </div>
                 </div>
             </li>
             
-             <li class="nav-item active">
-                <a class="nav-link" href="daftar_pengguna.html">
-                    <i class="fas fa-fw fa-user"></i>
-                    <span>Daftar Pengguna</span></a>
-            </li>
-
-      
+         
         </ul>
         <!-- End of Sidebar -->
 
@@ -156,7 +139,7 @@
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="login.html" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
@@ -166,108 +149,21 @@
                     </ul>
 
                 </nav>
-            <!-- End of Main Content -->
- <!-- Begin Page Content -->
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                   <div class="row">
-                            <div class="col-lg-6">
-                            <img src="img/pln.jpeg" height="550"></div>
-                            <div class="col-lg-6">
-                                <div class="p-5">
-                                    <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Perencanaan Praktikum</h1>
-                                    </div>
-                                    <form class="user">
-                                        <div class="form-group">
-                                             <input type="text" class="form-control form-control-user"
-                                                id="kodepembelajaran"
-                                                placeholder="Kode Pembelajaran">
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <input type="text" class="form-control form-control-user"
-                                                id="judul" 
-                                                placeholder="Judul Pembelajaran">
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                        	<td> Periode Praktikum </td>
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                       		<td> Tanggal Mulai : </td>
-                                           	<td> <input type="date"></td>
-                                            </div>
-                                        <div class="form-group">
-                                            <td> Tanggal selesai : </td>
-                                            <td> <input type="date"></td>
-                                            </div>
-                                        
-                                         <div class="form-group">
-                                            <input type="text" class="form-control form-control-user"
-                                                id="lokasi" 
-                                                placeholder="Lokasi Praktikum">
-                                        </div>
-                                        
-                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
-                                            Add
-                                        </a>
-                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
-                                            Cancel
-                                        </a>
-                                        <hr>
-                                      
-                                </div>
-                            </div>
-                        </div>
-
-                </div>
-                <!-- /.container-fluid -->
-
-            </div>
-            <!-- End of Main Content -->
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                        
                     </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
 
-        </div>
-        <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
+                    	<center>
+                        <img src="img/pln.jpeg" height="500" width="480">
+                    </center>
+                    </div>
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -278,6 +174,13 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
 
 </body>
 
