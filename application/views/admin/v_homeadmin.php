@@ -80,7 +80,7 @@
                         </li>
                         
                         <li class="nav-item active">
-                            <a class="nav-link" href="daftar_pengguna.html">
+                            <a class="nav-link" href="<?= base_url('c_daftarpengguna'); ?>">
                                 <i class="fas fa-fw fa-user"></i>
                                 <span>Daftar Pengguna</span></a>
                             </li>

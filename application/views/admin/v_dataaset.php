@@ -10,7 +10,6 @@
     <meta name="author" content="">
 
     <title>data aset</title>
-
     <!-- Custom fonts for this template-->
     <link href="<?= base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
@@ -19,6 +18,14 @@
 
     <!-- Custom styles for this template-->
     <link href="<?= base_url('assets/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
 
 </head>
 
@@ -171,53 +178,53 @@
                     <!-- Page Heading -->
                    <div class="row">
                             <div class="col-lg-6">
-                            <img src="<?= base_url('assets/'); ?>img/pln.jpeg" height="550"></div>
                             <div class="col-lg-6">
                                 <div class="p-5">
-                                    <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Data Aset Laboratorium</h1>
-                                    </div>
-                                    <form class="user" method="post" action="<?= base_url('c_dataaset/tambah'); ?>">
-                                        <div class="form-group">
-                                             <input type="text" class="form-control form-control-user"
-                                                id="kode" placeholder="Kode aset" name="kode_aset">
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <input type="text" class="form-control form-control-user"
-                                                id="namaaset" placeholder="nama aset" name="nama_aset">
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                        	<td> Klasifikasi : </td>
-                                            <td> <select name="klasifikasi">
-                                            		<option> Alat Pelindung Diri </option>
-                                            		<option> Alat Ukur </option>
-                                                    <option> Material Praktikum </option>
-                                                    <option> Peralatan Mendukung </option>                                                    
-                                            </select>
-                                            </td>
-                                        </div>
-                                        
-                                         <div class="form-group">
-                                            <input type="text" class="form-control form-control-user"
-                                                id="spek" placeholder="speksifikasi" name="spesifikasi">
-                                        </div>
-                                        
-                                         <div class="form-group">
-                                            <input type="text" class="form-control form-control-user"
-                                                id="tempataset" placeholder="tempat aset" name="lokasi_aset">
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                        	<td> Foto : </td>
-                                            <td><input type="file" id="gambar" name="foto_aset"></td> 
-                                            </div>
-
-                                        <button type="submit" name="submit" class="btn btn-primary btn-user btn-block">Add</button>
-                                        <a href="<?= base_url('c_dataaset'); ?>" class="btn btn-primary btn-user btn-block">
-                                            Cancel
-                                        </a>
+                                    <a href="<?= base_url('c_tambahdataaset');?>" class= "btn btn-primary">Tambah Data</a>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Kode Aset</th>
+      <th scope="col">Nama Aset</th>
+      <th scope="col">Klasifikasi</th>
+      <th scope="col">Spesifikasi</th>
+      <th scope="col">Tempat</th>
+      <th scope="col">Foto Aset</th>
+      <th scope="col">QR Code</th>
+      <th scope="col">Aksi</th>                        
+    </tr>
+  </thead>
+  <?php
+    $no = 1;
+    foreach($aset as $as){
+    ?>
+  <tbody>
+    <tr>
+      <td><?php echo $no++ ?></td>
+      <td><?php echo $as->kode_aset?></td>
+      <td><?php echo $as->nama_aset?></td>
+      <td><?php echo $as->klasifikasi?></td>
+      <td><?php echo $as->spesifikasi?></td>
+      <td><?php echo $as->lokasi_aset?></td>
+      <td><?php echo $as->foto_aset?></td>
+      <td>
+                                      <?php
+                            require 'vendor/autoload.php'; // load folder vendor/autoload
+                            $qrCode = new Endroid\QrCode\QrCode($as->kode_aset); // mengambil data kode siswa sebagai data  QR code
+                            $qrCode->writeFile('./QRcode/' . $as->nama_aset . '.png'); // direktori untuk menyimpan gambar QR code
+                            ?>
+                            <!-- tampilkan gambar QR code -->
+                            <img src="<?= base_url('./QRcode/' . $as->nama_aset . '.png') ?>" alt="QRcode-siswa" width="100px">
+      </td>
+      <td>
+        <?php echo anchor('c_tambahdataaset/edit/'.$as->kode_aset,'Edit'); ?>
+        <?php echo anchor('c_tambahdataaset/hapus/'.$as->kode_aset,'Hapus'); ?>          
+      </td>  
+    </tr>
+  </tbody>
+  <?php } ?>
+</table>                          
                                         <hr>
                                       
                                 </div>
@@ -280,6 +287,13 @@
 
     <!-- Custom scripts for all pages-->
     <script src="<?= base_url('assets/'); ?>js/sb-admin-2.min.js"></script>
+
+    <!-- datatables -->
+    <script type="text/javascript">
+        $(document).ready( function () {
+    $('#table_id').DataTable();
+} );        
+    </script>
 
 </body>
 

@@ -5,7 +5,7 @@ class c_dataaset extends CI_Controller {
 	public function __construct()
     {
 		parent::__construct();		
-		$this->load->model('m_dataaset');
+		$this->load->model('m_tambahdataaset');
 		$this->load->helper('url');
 
         //  if (!$this->session->userdata('namaloginadm')) 
@@ -27,6 +27,7 @@ class c_dataaset extends CI_Controller {
 			// $data['total_hotel']= $this->m_dashboard->hitunghotel();
 			// $data['total_pengguna']= $this->m_dashboard->hitungpengguna();
 			// $data['konten'] = "admin/isidashboard";
+			$data['aset'] = $this->m_tambahdataaset->tampil_data()->result();
 			$this->load->view('admin/v_dataaset', $data);
 		}	
 
@@ -37,24 +38,4 @@ class c_dataaset extends CI_Controller {
 		
 	}
 
-	public function tambah(){
-		$kode_aset = $this->input->post('kode_aset');
-		$foto_aset = $this->input->post('foto_aset');
-		$spesifikasi = $this->input->post('spesifikasi');
-		$klasifikasi = $this->input->post('klasifikasi');
-		$lokasi_aset = $this->input->post('lokasi_aset');						
-		$nama_aset = $this->input->post('nama_aset');
-						
- 
-		$data = array(
-			'kode_aset' => $kode_aset,
-			'foto_aset' => $foto_aset,
-			'spesifikasi' => $spesifikasi,
-			'klasifikasi' => $klasifikasi,
-			'lokasi_aset' => $lokasi_aset,
-			'nama_aset' => $nama_aset
-			);
-		$this->m_dataaset->input_data($data,'aset');
-		redirect('c_dataaset/index');		
-	}
 }
