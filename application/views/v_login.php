@@ -46,11 +46,11 @@
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user"
                                                 id="username" aria-describedby="emailHelp"
-                                                placeholder="Username..." name="namaloginadm">
+                                                placeholder="Username..." name="username">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                id="password_adm" placeholder="Password" name="password_adm">
+                                                id="password_adm" placeholder="Password" name="password">
                                        <hr>
                                         <button type="submit" class="btn btn-primary btn-user btn-block">Login</button>
                                        

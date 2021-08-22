@@ -59,27 +59,6 @@
                         </li>
                         
                         <li class="nav-item active">
-                            <a class="nav-link" href="rencana_praktikum.html">
-                                <i class="fas fa-fw fa-toolbox"></i>
-                                <span>Pelaksanaan Praktikum</span></a>
-                            </li>
-                            
-                            <li class="nav-item active">
-                                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                                aria-expanded="true" aria-controls="collapseTwo">
-                                <i class="fas fa-fw fa-book-open"></i>
-                                <span>Laporan</span>
-                            </a>
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                                <div class="bg-white py-2 collapse-inner rounded">
-                                    <a class="collapse-item" href="">Form Perencanaan </a>
-                                    <a class="collapse-item" href="">Form Pelaksanaan </a>
-                                    <a class="collapse-item" href="">Laporan Data Aset </a>
-                                </div>
-                            </div>
-                        </li>
-                        
-                        <li class="nav-item active">
                             <a class="nav-link" href="<?= base_url('c_daftarpengguna'); ?>">
                                 <i class="fas fa-fw fa-user"></i>
                                 <span>Daftar Pengguna</span></a>
