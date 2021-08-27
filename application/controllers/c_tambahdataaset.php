@@ -42,7 +42,9 @@ class c_tambahdataaset extends CI_Controller {
 		$foto_aset = $this->input->post('foto_aset');
 		$spesifikasi = $this->input->post('spesifikasi');
 		$klasifikasi = $this->input->post('klasifikasi');
-		$lokasi_aset = $this->input->post('lokasi_aset');						
+		$jumlah_aset = $this->input->post('jumlah_aset');
+		$lokasi_aset = $this->input->post('lokasi_aset');
+		$status = $this->input->post('status');						
 		$nama_aset = $this->input->post('nama_aset');
 						
  
@@ -51,7 +53,9 @@ class c_tambahdataaset extends CI_Controller {
 			'foto_aset' => $foto_aset,
 			'spesifikasi' => $spesifikasi,
 			'klasifikasi' => $klasifikasi,
+			'jumlah_aset' => $jumlah_aset,
 			'lokasi_aset' => $lokasi_aset,
+			'status' => $status,
 			'nama_aset' => $nama_aset
 			);
 		$this->m_tambahdataaset->input_data($data,'aset');

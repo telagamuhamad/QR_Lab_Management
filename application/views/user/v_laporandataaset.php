@@ -63,7 +63,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="form perencanaan.html">Form Perencanaan </a>
                         <a class="collapse-item" href="Form pelaksanaan.html">Form Pelaksanaan </a>
-                        <a class="collapse-item" href="<?= base_url('c_laporandataaset');?>">Laporan Data Aset </a>
+                        <a class="collapse-item" href="laporan data aset.html">Laporan Data Aset </a>
                     </div>
                 </div>
             </li>
@@ -162,6 +162,7 @@
                     </center>
                     </div>
 
+<a href="<?= base_url('c_laporandataaset/cetak');?>">cetak</a>
     <!-- Bootstrap core JavaScript-->
     <script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
     <script src="<?= base_url('assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

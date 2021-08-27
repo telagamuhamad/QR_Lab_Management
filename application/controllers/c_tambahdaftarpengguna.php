@@ -40,7 +40,6 @@ class c_tambahdaftarpengguna extends CI_Controller {
 		$password_usr = $this->input->post('password_usr');						
 		$role = $this->input->post('role');
 
-
 		$data = array(
 			'id_user' => $id_user,
 			'nama_user' => $nama_user,
@@ -48,8 +47,13 @@ class c_tambahdaftarpengguna extends CI_Controller {
 			'password_usr' => $password_usr,
 			'role' => $role
 		);
-		$this->m_daftarpengguna->input_data($data,'user');
-		redirect('c_daftarpengguna/index');		
+		if($role == 'admin'){
+			$this->m_daftarpengguna->input_data($data,'Admin');
+			redirect('c_daftarpengguna/index');	
+		}else{
+			$this->m_daftarpengguna->input_data($data,'User');
+			redirect('c_daftarpengguna/index');	
+		}		
 	}
 
 	function hapus($id_user){

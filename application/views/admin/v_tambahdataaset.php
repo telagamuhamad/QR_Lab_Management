@@ -53,7 +53,7 @@
                     </li>
                     
                     <li class="nav-item active">
-                        <a class="nav-link" href="rencana_praktikum.html">
+                        <a class="nav-link" href="<?= base_url('c_perencanaan'); ?>">
                             <i class="fas fa-fw fa-pencil-alt"></i>
                             <span>Perencanaan Praktikum</span></a>
                         </li>
@@ -179,6 +179,11 @@
                           </div>
                           
                           <div class="form-group">
+                            <input type="number" class="form-control form-control-user"
+                            id="spek" placeholder="jumlah_aset" name="jumlah_aset">
+                        </div>
+
+                          <div class="form-group">
                             <input type="text" class="form-control form-control-user"
                             id="spek" placeholder="speksifikasi" name="spesifikasi">
                         </div>
@@ -187,6 +192,15 @@
                             <input type="text" class="form-control form-control-user"
                             id="tempataset" placeholder="tempat aset" name="lokasi_aset">
                         </div>
+
+                                <div class="form-group">
+                                   <td> Status : </td>
+                                   <td> <select name="status">
+                                      <option> Tersedia </option>
+                                      <option> Tidak Tersedia </option>                         
+                                  </select>
+                              </td>
+                          </div>                        
                         
                         <div class="form-group">
                            <td> Foto : </td>

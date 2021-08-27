@@ -65,13 +65,20 @@ class c_login extends CI_Controller{
 
      else if ($user)
         {
-            if ($password == $user['password_usr'])
+            if ($password == $user['password_usr'] && $user['role'] == 'User')
             {
                 $data = [
                     'user_login' => $user['namalogin_usr']
                 ];
                 $this->session->set_userdata($data);
                 redirect('c_homeuser');
+            }
+            else if($password == $user['password_usr'] && $user['role'] == 'admin'){
+                $data = [
+                    'user_login' => $user['namalogin_usr']
+                ];
+                $this->session->set_userdata($data);
+                redirect('c_homeadmin');
             }
             else 
             {

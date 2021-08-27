@@ -60,7 +60,7 @@
                     </li>
                     
                     <li class="nav-item active">
-                        <a class="nav-link" href="rencana_praktikum.html">
+                        <a class="nav-link" href="<?= base_url('c_perencanaan'); ?>">
                             <i class="fas fa-fw fa-pencil-alt"></i>
                             <span>Perencanaan Praktikum</span></a>
                         </li>
