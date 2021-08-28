@@ -32,7 +32,17 @@
                 <div class="card o-hidden border-0 shadow-lg my-5">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
-                        <div class="row">
+
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img class="d-block w-100" src="assets/img/slide1.jpeg" height="500" alt="First slide">
+                              </div>
+                              <div class="carousel-item">
+                                <img class="d-block w-100" src="assets/img/slide2.jpeg" height="500" alt="Second slide">
+                              </div>
+                              <div class="carousel-item">
+                              <div class="row">
                            <div class="col-lg-6">
                             <img src="<?= base_url('assets/'); ?>img/pln.jpeg" height="500" width="450"></div>
                           
@@ -57,6 +67,18 @@
                                 </div>
                             </div>
                         </div>
+                              </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="sr-only">Next</span>
+                            </a>
+                          </div>
+                        
                     </div>
                 </div>
 
