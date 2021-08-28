@@ -5,6 +5,11 @@ class m_perencanaan extends CI_Model{
     return $this->db->get('perencanaanprak');
   }
 
+  function tampil_detail($kode_belajar){
+    $query = $this->db->query("SELECT * FROM perencanaanprak WHERE kode_belajar = '$kode_belajar'");
+    return $query->result();
+  }  
+
   function input_data($data,$table){
     $this->db->insert($table,$data);
   }

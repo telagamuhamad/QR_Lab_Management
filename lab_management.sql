@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 22, 2021 at 07:41 PM
+-- Generation Time: Aug 28, 2021 at 05:04 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 7.3.29
 
@@ -52,7 +52,9 @@ CREATE TABLE `aset` (
   `nama_aset` varchar(50) NOT NULL,
   `spesifikasi` varchar(50) NOT NULL,
   `klasifikasi` varchar(50) NOT NULL,
+  `jumlah_aset` int(11) NOT NULL,
   `lokasi_aset` varchar(50) NOT NULL,
+  `status` enum('tersedia','tidak tersedia','','') NOT NULL,
   `foto_aset` blob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -60,8 +62,9 @@ CREATE TABLE `aset` (
 -- Dumping data for table `aset`
 --
 
-INSERT INTO `aset` (`kode_aset`, `nama_aset`, `spesifikasi`, `klasifikasi`, `lokasi_aset`, `foto_aset`) VALUES
-('AS01', 'laptop', 'Intel Core I3', 'Peralatan Mendukung', 'Laboratorium', 0x696d616765732e6a7067);
+INSERT INTO `aset` (`kode_aset`, `nama_aset`, `spesifikasi`, `klasifikasi`, `jumlah_aset`, `lokasi_aset`, `status`, `foto_aset`) VALUES
+('AS01', 'laptop', 'Intel Core I3', 'Alat Pelindung Diri', 5, 'Laboratorium', 'tersedia', 0x53637265656e73686f74202831393437292e706e67),
+('AS02', 'komputer', 'Intel Core I3', 'Alat Ukur', 5, 'Laboratorium', 'tersedia', 0x50696374757265312e706e67);
 
 -- --------------------------------------------------------
 
@@ -92,9 +95,19 @@ CREATE TABLE `laporan_data_aset` (
 --
 
 CREATE TABLE `pelaks_prak` (
-  `kode_belajar` varchar(10) NOT NULL,
-  `id_user` varchar(10) NOT NULL
+  `kode` varchar(10) NOT NULL,
+  `tgl_mulai` datetime NOT NULL,
+  `tgl_selesai` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pelaks_prak`
+--
+
+INSERT INTO `pelaks_prak` (`kode`, `tgl_mulai`, `tgl_selesai`) VALUES
+('AS01', '2021-08-28 04:39:00', '2021-08-28 02:59:00'),
+('AS02', '2021-08-28 04:40:00', '2021-08-28 04:40:00'),
+('AS01', '2021-08-28 02:58:00', '2021-08-28 02:59:00');
 
 -- --------------------------------------------------------
 
@@ -109,6 +122,13 @@ CREATE TABLE `perencanaanprak` (
   `lokasi` varchar(50) NOT NULL,
   `judul` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `perencanaanprak`
+--
+
+INSERT INTO `perencanaanprak` (`kode_belajar`, `tgl_mulai`, `tgl_selesai`, `lokasi`, `judul`) VALUES
+('PR01', '2021-08-01', '2021-08-29', 'Gedung Labtek 1', 'Algoritma dan Struktur Data');
 
 -- --------------------------------------------------------
 
@@ -165,8 +185,7 @@ ALTER TABLE `laporan_data_aset`
 -- Indexes for table `pelaks_prak`
 --
 ALTER TABLE `pelaks_prak`
-  ADD KEY `kode_belajar` (`kode_belajar`),
-  ADD KEY `id_user` (`id_user`);
+  ADD KEY `kode_aset` (`kode`);
 
 --
 -- Indexes for table `perencanaanprak`
@@ -200,8 +219,7 @@ ALTER TABLE `laporan_data_aset`
 -- Constraints for table `pelaks_prak`
 --
 ALTER TABLE `pelaks_prak`
-  ADD CONSTRAINT `pelaks_prak_ibfk_1` FOREIGN KEY (`kode_belajar`) REFERENCES `perencanaanprak` (`kode_belajar`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `pelaks_prak_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `pelaks_prak_ibfk_1` FOREIGN KEY (`kode`) REFERENCES `aset` (`kode_aset`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

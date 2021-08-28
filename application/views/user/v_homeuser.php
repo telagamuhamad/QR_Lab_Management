@@ -41,14 +41,14 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="indexuser.html">
+                <a class="nav-link" href="<?= base_url('c_homeuser');?>">
                     <i class="fas fa-fw fa-globe"></i>
                     <span>Dashboard</span></a>
             </li>
             
          
             <li class="nav-item active">
-                <a class="nav-link" href="pelaksanaan_praktikum.html">
+                <a class="nav-link" href="<?= base_url('c_pelaksprak');?>">
                     <i class="fas fa-fw fa-toolbox"></i>
                     <span>Pelaksanaan Praktikum</span></a>
             </li>
@@ -61,8 +61,8 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="form perencanaan.html">Form Perencanaan </a>
-                        <a class="collapse-item" href="Form pelaksanaan.html">Form Pelaksanaan </a>
+                        <a class="collapse-item" href="<?= base_url('c_viewlaprencana');?>">Form Perencanaan </a>
+                        <a class="collapse-item" href="<?= base_url('c_viewlaplaksana');?>">Form Pelaksanaan </a>
                         <a class="collapse-item" href="<?= base_url('c_laporandataaset');?>">Laporan Data Aset </a>
                     </div>
                 </div>

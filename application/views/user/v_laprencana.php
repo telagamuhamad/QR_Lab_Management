@@ -163,12 +163,16 @@
                     <!-- <div class="col-lg-6"> -->
                         <div class="col-lg-12">
                             <div class="p-5">
+                                <a href="<?= base_url('c_tambahdataaset');?>" class= "btn btn-primary">Tambah Data</a>
                                 <table class="table table-bordered">
                                   <thead>
                                     <tr>
                                       <th scope="col">No</th>
+                                      <th scope="col">Tanggal Mulai</th>
+                                      <th scope="col">Tanggal Selesai</th>
+                                      <th scope="col">Kode Pembelajaran</th>
                                       <th scope="col">Judul Pembelajaran</th>
-                                      <th scope="col">Aksi</th>                        
+                                      <th scope="col">Lokasi Praktikum</th>                 
                                   </tr>
                               </thead>
                               <?php
@@ -178,9 +182,13 @@
                                 <tbody>
                                     <tr>
                                       <td><?php echo $no++ ?></td>
+                                      <td><?php echo $as->tgl_mulai?></td>
+                                      <td><?php echo $as->tgl_selesai?></td>
+                                      <td><?php echo $as->kode_belajar?></td>
                                       <td><?php echo $as->judul?></td>
+                                      <td><?php echo $as->lokasi?></td>
                         <td>
-                            <?php echo anchor('c_pelaksprak/detail/'.$as->kode_belajar,'Lihat'); ?>        
+                            <?php echo anchor('c_laporanperencanaan'); ?>          
                         </td>  
                     </tr>
                 </tbody>

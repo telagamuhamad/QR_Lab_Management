@@ -167,20 +167,27 @@
                                   <thead>
                                     <tr>
                                       <th scope="col">No</th>
-                                      <th scope="col">Judul Pembelajaran</th>
+                                      <th scope="col">Nama Aset</th>
+                                      <th scope="col">Klasifikasi</th>
+                                      <th scope="col">Kode Aset</th>
+                                      <th scope="col">Tanggal Pengembalian</th>
                                       <th scope="col">Aksi</th>                        
                                   </tr>
                               </thead>
                               <?php
                               $no = 1;
-                              foreach($perencanaanprak as $as){
+                              foreach($hasil as $as){
                                 ?>
                                 <tbody>
                                     <tr>
                                       <td><?php echo $no++ ?></td>
-                                      <td><?php echo $as->judul?></td>
+                                      <td><?php echo $as->nama_aset?></td>
+                                      <td><?php echo $as->klasifikasi?></td>
+                                      <td><?php echo $as->kode_aset?></td>
+                                      <td><?php echo $as->tgl_selesai?></td>
+                                      <td><img src="<?= base_url('./QRcode/' . $as->nama_aset . '.png') ?>" alt="QRcode-siswa" width="100px"></td>
                         <td>
-                            <?php echo anchor('c_pelaksprak/detail/'.$as->kode_belajar,'Lihat'); ?>        
+                                        <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#addNewModal">Scan</button><br/>         
                         </td>  
                     </tr>
                 </tbody>
@@ -194,6 +201,34 @@
 
 </div>
 <!-- /.container-fluid -->
+<form action="<?php echo site_url('c_pelaksprak/updatekembali');?>" method="post">
+        <div class="modal fade" id="addNewModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add New Package</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Kode Aset</label>
+                    <div class="col-sm-10">
+                      <input type="text" name="kode" class="form-control" placeholder="Kode Aset" required>
+                    </div>
+                </div>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-success btn-sm">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </form>
 
 </div>
 <!-- End of Main Content -->

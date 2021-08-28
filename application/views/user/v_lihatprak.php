@@ -9,16 +9,16 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Laboratory Management System</title>
+    <title>Pelaksanaan Praktikum</title>
 
     <!-- Custom fonts for this template-->
-    <link href="<?= base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="<?= base_url('assets/');?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="<?= base_url('assets/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="<?= base_url('assets/');?>css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -128,56 +128,140 @@
                         </li>
 
                         <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                            <li class="nav-item dropdown no-arrow">
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $user['namalogin_usr'];?></span>
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
-                                <div class="dropdown-divider"></div>
+                            aria-labelledby="userDropdown">
+                            <div class="dropdown-divider"></div>
                             <a href="<?= base_url('c_login/logout'); ?>">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400">Logout</i>
                             </a>
-                            </div>
-                        </li>
-
+                        </div>
+                    </li>
                     </ul>
 
                 </nav>
-                <!-- End of Topbar -->
-
-                <!-- Begin Page Content -->
+            <!-- End of Main Content -->
+ <!-- Begin Page Content -->
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                        
-                    </div>
+                   <div class="row">
+                            <div class="col-lg-12">
+                            <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">Distribusi Aset</h1>
+                                    </div>
+                                    <?php foreach($perencanaanprak as $as){ ?>
+                                        <div class="form-group">
+                                            <tr>
+                                             <td> Kode pembelajaran : </td>
+                                             <td> <?php echo $as->kode_belajar?> </td>
+                                             </tr>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <tr>
+                                             <td> Judul pembelajaran : </td>
+                                             <td> <?php echo $as->judul?> </td>
+                                             </tr>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <tr>
+                                             <td> Periode praktikum : </td>
+                                             <td> <?php echo $as->tgl_mulai.' s.d '.$as->tgl_selesai?></td>
+                                             </tr>
+                                        </div>
+                                        <div class="form-group">
+                                            <tr>
+                                             <td> Lokasi praktikum : </td>
+                                             <td> <?php echo $as->lokasi?> </td>
+                                             </tr>
+                                        </div>
+                                        <div class="form-group">
+                                            <tr>
+                                             <td> Distribusi Aset : </td>
+                                             </tr>
+                                        </div>
+                                        <?php } ?>
+                       
+                       <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                            <a href="<?= base_url('c_pelaksprak/distribusi');?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">Distribusi Aset</a>
+                            <a href="<?= base_url('c_pelaksprak/kembali');?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">Pengembalian Aset</a>
+                            <a href="pelaksanaan_praktikum.html" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">OK</a>
+                           
+                       </div>
+                                        
+                                        
+                                       </div>
+                                       </div>
+                                   
+                              
+                                   
+                        </div>
 
-                    	<center>
-                        <img src="<?= base_url('assets/'); ?>img/pln.jpeg" height="500" width="480">
-                    </center>
+                </div>
+                <!-- /.container-fluid -->
+                
+                
+            </div>
+            <!-- End of Main Content -->
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2020</span>
                     </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
 
-<a href="<?= base_url('c_laporanperencanaan/cetak');?>">cetak</a>
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Bootstrap core JavaScript-->
-    <script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
-    <script src="<?= base_url('assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= base_url('assets/');?>vendor/jquery/jquery.min.js"></script>
+    <script src="<?= base_url('assets/');?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="<?= base_url('assets/'); ?>vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="<?= base_url('assets/');?>vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="<?= base_url('assets/'); ?>js/sb-admin-2.min.js"></script>
+    <script src="<?= base_url('assets/');?>js/sb-admin-2.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="<?= base_url('assets/'); ?>vendor/chart.js/Chart.min.js"></script>
+</body>
 
-    <!-- Page level custom scripts -->
-    <script src="<?= base_url('assets/'); ?>js/demo/chart-area-demo.js"></script>
-    <script src="<?= base_url('assets/'); ?>js/demo/chart-pie-demo.js"></script>
-
-</body></html>
+</html>
