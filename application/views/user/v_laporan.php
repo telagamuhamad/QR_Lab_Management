@@ -12,20 +12,23 @@
 </head>
 
 <body>
-    <br>
-        <p><img src ="<?= base_url('assets/');?>img/header2.png" >
-        <img src = "img/Logo_PLN.png" >
-    </p>
-
+    <img src ="assets/img/header2.png" style="position: absolute;" width="800" height= auto>
+  <table style="width: 100%;">
+    <tr>
+      <td align="right">
+      <img src = "assets/img/Logo_PLN.png" style="float:right;width:80px;height:100px;">
+      </td>
+    </tr>
+  </table>
     <br><br><br><br><br>
 
-                <h2 style="text-align: center;">LAPORAN</h2>
-                <h2 style="text-align: center;">DATA ASET LABORATORIUM</h2>
-                <h2 style="text-align: center;">PT PLN (PERSERO) UPDL PALEMBANG</h2>
-
+                <p style="text-align: center;">LAPORAN<br>
+                <p style="text-align: center;">DATA ASET LABORATORIUM<br>
+                <p style="text-align: center;">PT PLN (PERSERO) UPDL PALEMBANG<br>
+              
     <br>
 
-<table border="1">
+<table class="table table-bordered">
                                   <thead>
                                     <tr>
                                       <th scope="col">No</th>
@@ -33,12 +36,9 @@
                                       <th scope="col">Nama Aset</th>
                                       <th scope="col">Klasifikasi</th>
                                       <th scope="col">Spesifikasi</th>
-                                      <th scope="col">Jumlah</th>
                                       <th scope="col">Tempat</th>
                                       <th scope="col">Foto Aset</th>
-                                      <th scope="col">Status</th>
-                                      <th scope="col">QR Code</th>
-                                      <th scope="col">Aksi</th>                        
+                                                      
                                   </tr>
                               </thead>
                               <?php
@@ -52,10 +52,9 @@
                                       <td><?php echo $as->nama_aset?></td>
                                       <td><?php echo $as->klasifikasi?></td>
                                       <td><?php echo $as->spesifikasi?></td>
-                                      <td><?php echo $as->jumlah_aset?></td>
                                       <td><?php echo $as->lokasi_aset?></td>
                                       <td><?php echo $as->foto_aset?></td>
-                                      <td><?php echo $as->status?></td> 
+                                    
                     </tr>
                 </tbody>
             <?php } ?>
@@ -63,27 +62,27 @@
 
     <br><br>
 
-<!--     <table style="width: 100%;" >
+<table style="width: 100%;" >
         <tr>
             <td align="left">
             <span style="font-family: 'Times New Roman', Times, serif;">
                 <p>MAN 1 JAR</p>
                 <br><br><br>
-                <p>Muhammad Affandi</p>
+                <p>.............................</p>
             </span>
             </td>
             
 
             <td align="right">
                 <span style="font-family: 'Times New Roman', Times, serif;">
-                    <p>Palembang, ...........................</p>
+                    <p>Palembang, .............................</p>
                     <p>Supervisor Laboratorium</p>
                     <br><br><br>
-                    <p>Muhammad Telaga Nasution</p>
+                    <p>.............................</p>
                 </span>
                 </td>
         </tr>
-    </table> -->
+    </table>
 
 
 </body>
