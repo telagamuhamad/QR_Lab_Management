@@ -23,7 +23,7 @@
     <br><br><br><br><br>
 
                 <p style="text-align: center;">LAPORAN<br>
-                <p style="text-align: center;">PERENCANAAN PRAKTIKUM<br>
+                <p style="text-align: center;">PELAKSANAAN PRAKTIKUM<br>
                 <p style="text-align: center;">PT PLN (PERSERO) UPDL PALEMBANG<br>
               
     <br>
@@ -36,7 +36,7 @@
                                       <th scope="col">Klasifikasi</th>
                                       <th scope="col">Kode Aset</th>
                                       <th scope="col">Tanggal Peminjaman</th>
-                                      <th scope="col">Aksi</th>                
+                                                    
                                   </tr>
                               </thead>
                               <?php
@@ -62,7 +62,7 @@
                                       <th scope="col">Klasifikasi</th>
                                       <th scope="col">Kode Aset</th>
                                       <th scope="col">Tanggal Pengembalian</th>
-                                      <th scope="col">Aksi</th>                
+                                                    
                                   </tr>
                               </thead>
                               <?php
