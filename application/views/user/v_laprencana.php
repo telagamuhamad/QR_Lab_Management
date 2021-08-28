@@ -163,7 +163,6 @@
                     <!-- <div class="col-lg-6"> -->
                         <div class="col-lg-12">
                             <div class="p-5">
-                                <a href="<?= base_url('c_tambahdataaset');?>" class= "btn btn-primary">Tambah Data</a>
                                 <table class="table table-bordered">
                                   <thead>
                                     <tr>
@@ -188,7 +187,7 @@
                                       <td><?php echo $as->judul?></td>
                                       <td><?php echo $as->lokasi?></td>
                         <td>
-                            <?php echo anchor('c_laporanperencanaan'); ?>          
+                            <a href="<?= base_url('c_laporanperencanaan');?>">Cetak</a>           
                         </td>  
                     </tr>
                 </tbody>
